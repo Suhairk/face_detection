@@ -1,7 +1,7 @@
 import cv2
-alg= "haarcascade_frontalface_default.xml"
+alg= "haarcascade_frontalface_default.xml"  #algorithm for detection
 haar_cascade = cv2.CascadeClassifier(alg)
-cam =cv2.VideoCapture(0)
+cam =cv2.VideoCapture(0) #primary_camera
 
 while True:
     text = "No face detected"
@@ -13,7 +13,7 @@ while True:
         text = "face detected"
     cv2.putText(img, text, (10,20),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,255),2)
 
-    cv2.imshow("facedetection", img)
+    cv2.imshow("facedetected", img)
     key = cv2.waitKey(1) & 0xFF
     if key == ord("q"):
         break
